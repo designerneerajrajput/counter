@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Counter ===</title>
+    <style>
+	body{
+	padding:0;
+	}
+        .counter-wrap {
+            width: 407px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            padding: 40px;
+            text-align: center;
+            align-content: center;
+        }
+
+        body {
+            background: #f3ffe8;
+        }
+
+        .counter-wrap button {
+            padding: 10px 20px;
+            font-size: 15px;
+            box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+            border: none;
+            color: #fff;
+            border-radius: 7px;
+            cursor: pointer;
+        }
+
+        button#increment {
+            background: green;
+        }
+
+
+
+        button#decrement {
+            background: red;
+        }
+
+        button#reset {
+            background: orange;
+        }
+
+        .counter-wrap h1 {
+            border: 1px solid #ddd;
+            padding: 20px;
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="counter-wrap">
+        <h1>Counter: <span id="counter">0</span></h1>
+        <button id="increment" onclick="inc()">Increment</button>
+        <button id="decrement" onclick="dec()">Decrement</button>
+        <button id="reset" onclick="res()">Reset</button>
+    </div>
+
+    <script>
+        let counterValue = 0;
+        var counter = document.getElementById("counter");
+
+        function updatecounter() {
+            counter.innerHTML = counterValue;
+        }
+
+        function inc() {
+            if (counterValue < 20) {
+                counterValue++;
+                updatecounter();
+            }
+        }
+
+        function dec() {
+            if (counterValue > 0) {  // Prevents counterValue from going below 0
+                counterValue--;
+                updatecounter();
+            }
+        }
+
+        function res() {
+            counterValue = 0;
+            updatecounter();
+        }
+    </script>
